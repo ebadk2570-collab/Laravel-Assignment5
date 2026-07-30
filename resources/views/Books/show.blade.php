@@ -1,11 +1,34 @@
-<h2>Book Details</h2>
+@extends('layouts.app')
 
-<p><b>Title:</b> {{ $book->title }}</p>
+@section('content')
 
-<p><b>Author:</b> {{ $book->author }}</p>
+<div class="card">
 
-<p><b>Description:</b> {{ $book->description }}</p>
+<div class="card-header bg-primary text-white">
 
-<p><b>Published Year:</b> {{ $book->published_year }}</p>
+<h3>{{ $book->title }}</h3>
 
-<a href="{{ route('books.index') }}">Back</a>
+</div>
+
+<div class="card-body">
+
+<p><strong>Author:</strong> {{ $book->author }}</p>
+
+<p><strong>Description:</strong></p>
+
+<p>{{ $book->description }}</p>
+
+<p><strong>Published Year:</strong> {{ $book->published_year }}</p>
+
+<a href="{{ route('books.index') }}"
+class="btn btn-secondary">
+
+Back
+
+</a>
+
+</div>
+
+</div>
+
+@endsection
